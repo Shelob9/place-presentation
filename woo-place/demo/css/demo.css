@@ -126,7 +126,7 @@ background: linear-gradient(top,  rgba(226,232,239,1) 0%,rgba(210,219,228,1) 100
 #top img  { float: none; display: inline; margin-top: 12px; }
 #container {padding: 60px 40px 100px;	border-top: 1px solid #93b6d2;}
 header {width: 420px; float: left;}
-#main {margin-left: 5%; margin-top: -25px;overflow: hidden;}
+#main {margin-left: 10%; margin-right: 10%; margin-top: -25px;overflow: hidden;}
 
 /* Header
 ***********************/
