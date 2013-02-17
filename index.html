@@ -16,15 +16,6 @@
 	<link rel="stylesheet" href="css/foundation.css" type="text/css" media="screen" />
 	<!-- Modernizr -->
   <script src="js/modernizr.js"></script>
-  <!-- Tiny Scrollbar -->
-  <script src="js/jquery.tinyscrollbar.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-
-        $('#scrollbar1').tinyscrollbar();
-
-    });
-</script>
   
   <style>
   
@@ -38,19 +29,6 @@
   .lp{font: 70px Tahoma, Helvetica, Arial, Sans-Serif;
 	text-align: center;color: #8A7646;
 text-shadow: 0px 2px 3px #555;}
-
-#scrollbar1 { width: 520px; clear: both; margin: 20px 0 10px; }
-#scrollbar1 .viewport { width: 500px; height: 200px; overflow: hidden; position: relative; }
-#scrollbar1 .overview { list-style: none; position: absolute; left: 0; top: 0; }
-#scrollbar1 .thumb .end,
-#scrollbar1 .thumb { background-color: #003D5D; }
-#scrollbar1 .scrollbar { position: relative; float: right; width: 15px; }
-#scrollbar1 .track { background-color: #D8EEFD; height: 100%; width:13px; position: relative; padding: 0 1px; }
-#scrollbar1 .thumb { height: 20px; width: 13px; cursor: pointer; overflow: hidden; position: absolute; top: 0; }
-#scrollbar1 .thumb .end { overflow: hidden; height: 5px; width: 13px; }
-#scrollbar1 .disable{ display: none; }
-.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
-
   </style>
   
 </head>
@@ -69,8 +47,8 @@ text-shadow: 0px 2px 3px #555;}
 <div class="row">
 
 	<div id="main" role="main" class="twelve columns centered">
-      <section class="slider" id="scrollbar1"  style="height:500px; overflow:scroll;">
-        <div id="slider" class="flexslider"  >
+      <section class="slider">
+        <div id="slider" class="flexslider"   style="height:500px; overflow:scroll;">
           <ul class="slides">
 <li>
 	<div class="ten columns centered">
