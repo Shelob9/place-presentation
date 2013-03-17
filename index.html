@@ -48,8 +48,93 @@ text-shadow: 0px 2px 3px #555;}
 		</div>
 	<div id="main" role="main" class="twelve columns centered ">
       <section class="slider">
-       
-        
+		<div class="row" id="sliders-row">
+			<div class="six columns" id="left-slider">
+				<div id="main-slider" class="flexslider">
+					<ul class="slides">
+						<li>
+							<img src="http://placekitten.com/g/600/100" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/200" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/300" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/400" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/500" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/400" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/400" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/400" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/400" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/400" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/400" />
+						</li>
+						<li>
+							<img src="http://placekitten.com/g/600/400" />
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="six columns" id="right-slider">
+				<div class="flexslider_children">
+					<ul class="slides">
+						<li>
+							<p>0</p>
+						</li>
+						<li>
+							<p>1</p>
+						</li>
+						<li>
+							<p>2</p>
+						</li>
+						 <li>
+							<p>Text</p>
+						</li>
+						<li>
+							<p>Text</p>
+						</li>
+						<li>
+							<p>Text</p>
+						</li>
+						<li>
+							<p>Text</p>
+						</li>
+						<li>
+							<p>Text</p>
+						</li>
+						<li>
+							<p>Text</p>
+						</li>
+						 <li>
+							<p>Text</p>
+						</li>
+						<li>
+							<p>Text</p>
+						</li>
+						<li>
+							<p>Text</p>
+						</li>
+	
+					</ul>
+				</div>
+			</div>
+		</div>        
       </section>
 </div>
 <div class="row" style="border-top:1px solid black;" id="git">
@@ -86,28 +171,41 @@ text-shadow: 0px 2px 3px #555;}
     $(function(){
       SyntaxHighlighter.all();
     });
-    $(window).load(function(){
-      $('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
-        asNavFor: '#slider'
-      });
-      
-      $('#slider').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        sync: "#carousel",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-    });
+    /** 
+* Create the children flexsliders. Must be array of jquery objects with the
+* flexslider data. Easiest way is to place selector group in a var.
+*/
+var children_slides = $('.flexslider_children').flexslider({
+  'slideshow': false, // Remove the animations
+  'controlNav' : false // Remove the controls
+}); 
+
+/** 
+* Set up the main flexslider
+*/
+$('.flexslider').flexslider({
+  'pauseOnHover' : true,
+  'animationSpeed': 2000,
+  'slideshowSpeed': 5000,
+  'initDelay': 3000,
+  // Call the update_children_slides which itterates through all children slides 
+  'before' : function(slider){ // Hijack the flexslider
+    update_children_slides(slider.animatingTo);
+  }   
+}); 
+
+/** 
+* Method that updates children slides
+* fortunetly, since all the children are not animating,
+* they will only update if the main flexslider updates. 
+*/
+var update_children_slides = function (slide_number){
+  // Iterate through the children slides but not past the max
+  for (i=0;i<children_slides.length;i++) {
+    // Run the animate method on the child slide
+    $(children_slides[i]).data('flexslider').flexAnimate(slide_number);
+  }   
+}
   </script>
 
 
