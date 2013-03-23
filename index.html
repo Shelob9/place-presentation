@@ -153,7 +153,31 @@ text-shadow: 0px 2px 3px #555;}
   <script defer src="js/demo.js"></script>
   
   <!--Fancybox settings -->
-  <script src="js/fancybox-set.js"></script>
+  <script>
+	  $(document).ready(function() {
+
+		/* This is basic - uses default settings */
+	
+		$("a#single_image").fancybox();
+	
+		/* Using custom settings */
+	
+		$("a#inline").fancybox({
+			'hideOnContentClick': true
+		});
+
+		/* Apply fancybox to multiple items */
+	
+		$("a.group").fancybox({
+			'transitionIn'	:	'elastic',
+			'transitionOut'	:	'elastic',
+			'speedIn'		:	600, 
+			'speedOut'		:	200, 
+			'overlayShow'	:	false
+		});
+	
+	});
+	</script>
   
 </body>
 </html>
