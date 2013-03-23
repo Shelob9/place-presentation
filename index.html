@@ -13,14 +13,16 @@
 	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 	<!--foundation -->	
 	<link rel="stylesheet" href="css/app.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/foundation.css" type="text/css" media="screen" />
+	//<link rel="stylesheet" href="css/foundation.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://complexwaveform.com/jp/wp-content/themes/cwf-wait-27/stylesheets/foundation.min.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://complexwaveform.com/jp/wp-content/themes/cwf-wait-27/style.css" type="text/css" media="screen" />
 	<!-- Modernizr -->
   <script src="js/modernizr.js"></script>
   
   <style>
   
   .h3{color:#8A7646;}
-  .h5{color:#5E5D19;}
+  .h3{color:#5E5D19;}
   .full{background:url('images/2ED.png');}
   
   .stick{position: fixed;top: 0px; }
@@ -34,31 +36,43 @@ text-shadow: 0px 2px 3px #555;}
 </head>
 <body class="loading">
 
-
-	
-	
-
-<div class="row">
-		
+<hgroup style="margin-bottom:45px;">
+	<div class="row" >
+		<h1>Josh Pollock: Resume</h1>
 	</div>
+	<div class="row">
+		<h3>Tagline. ipsums ipsums ipsums</h5>
+	</div>
+</hgroup>
 <div class="row">
-<div class="ten columns centered" style="margin-bottom:30px;">
-			<h1>The Fixation of Place</h1>
-			<h2 class="hide-for-small">Josh Pollock</h2>
-		</div>
 	<div id="main" role="main" class="twelve columns centered ">
-      <section class="slider">
-       
-        
+		<section class="slider">
+			<div class="flexslider">
+				<ul class="slides">
+					<li data-thumb="images/r-ed.jpg">
+						<h3>Education<h3>
+					</li>
+					<li data-thumb="images/r-skills.jpg">
+						<h3>Skills<h3>
+					</li>
+					<li data-thumb="images/r-proj.jpg">
+						<h3>Projects</h3>
+					</li>
+					<li data-thumb="images/r-exp.jpg">
+						<h3>Professional Experience</h3>
+					</li>
+				</ul>
+			</div>
       </section>
 </div>
-<div class="row" style="border-top:1px solid black;" id="git">
-    <div class="three mobile-one columns">
+
+<div class="row" style="border-top:1px solid black;">
+    <div class="three mobile-one columns" id="mail>
       	<a href="https://github.com/Shelob9/place-presentation.git">
       	<img src="images/octocat.png">
       	</a>
     </div>
-	<div class="three mobile-one columns" id="zip">
+	<div class="three mobile-one columns" id="Word">
       	<a href="https://github.com/Shelob9/place-presentation/archive/master.zip">
       	<img src="images/zip.png">
       	</a>
@@ -71,38 +85,28 @@ text-shadow: 0px 2px 3px #555;}
           </a>
           
 	</div>
-	<div class="three mobile-one columns">
-	<h5>http://tiny.cc/jp-place</h5>
+	<div class="three mobile-one columns" id="linkedin">
+	
   	</div>
  </div> 
   <!-- jQuery -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
   
-  <!-- FlexSlider -->
-  <script defer src="js/jquery.flexslider.js"></script>
+
   
-  <script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-    });
+ <!-- FlexSlider -->
+  <script defer src="js/jquery.flexslider.js"></script><script type="text/javascript">
+   
     $(window).load(function(){
-      $('#carousel').flexslider({
+      $('.flexslider').flexslider({
         animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
-        asNavFor: '#slider'
-      });
-      
-      $('#slider').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        sync: "#carousel",
+        controlNav: "thumbnails",
+        // Special properties
+				//controlsContainer: "",          //{UPDATED} Selector: USE CLASS SELECTOR. Declare which container the navigation elements should be appended too. Default container is the FlexSlider element. Example use would be ".flexslider-container". Property is ignored if given element is not found.
+				//manualControls: "",             //Selector: Declare custom control navigation. Examples would be ".flex-control-nav li" or "#tabs-nav li img", etc. The number of elements in your controlNav should match the number of slides/tabs.
+				//sync: "",                       //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
+				//asNavFor: "",                   //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
         start: function(slider){
           $('body').removeClass('loading');
         }
